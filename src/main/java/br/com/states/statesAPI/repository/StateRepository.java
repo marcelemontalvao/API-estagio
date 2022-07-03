@@ -11,7 +11,4 @@ import java.util.*;
 @Repository
 public interface StateRepository extends JpaRepository<State, Long>{
     Page<State> findByRegiao(String regiao, Pageable sort);
-    /*List<State> findByOrderByRegiao();
-    List<State> findByOrderByPopulacaoDesc();
-    List<State> findByOrderByAreaDesc();
-*/}
+}

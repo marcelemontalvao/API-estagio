@@ -31,19 +31,12 @@ public class ApiController {
     @Autowired
     private StateRepository stateRepository;
 
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public State register(@RequestBody StateDto stateDto) throws RegionInvalidException {
         return stateService.register(stateDto);
     }
 
-   /* @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<State> findAll(){
-        return stateService.findAll();
-    }
-*/
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public Page<StateDto> filterState(@RequestParam (required = false) String regiao, @PageableDefault (sort = "id", direction = Sort.Direction.ASC) Pageable sort) {
@@ -63,19 +56,6 @@ public class ApiController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Estado não encontrado."));
     }
 
-   /* @GetMapping("/ordenarRegiao")
-    public List<State> orderRegion(){
-        return stateService.findByRegiaoOrderByRegiao();
-    }
-
-   @GetMapping("/ordenarPopulacao")
-    public List<State> orderPopulation(){
-        return stateService.findByPopulacaoOrderByPopulacaoDesc();
-    }
-    @GetMapping("/ordenarArea")
-    public List<State> orderArea(){
-        return stateService.findByAreaOrderByAreaDesc();
-    }*/
 
    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

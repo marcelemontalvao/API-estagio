@@ -56,13 +56,5 @@ public class StateService {
         stateRepository.delete(state);
         return state;
     }
-   /* public List<State> findByRegiaoOrderByRegiao() {
-        return stateRepository.findByRegiaoOrderByRegiao();
-    }
-    public List<State> findByPopulacaoOrderByPopulacaoDesc() {
-        return stateRepository.findByPopulacaoOrderByPopulacaoDesc();
-    }
-    public List<State> findByAreaOrderByAreaDesc() {
-        return stateRepository.findByAreaOrderByAreaDesc();
-    }*/
+
 }
