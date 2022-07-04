@@ -90,6 +90,40 @@ paths:
           content:
             application/json:
               example: "Not Found" 
+  /api/states/:
+    parameters:
+      - name: regiao
+        in: query
+        schema:
+          type: string
+          enum: 
+            - Sul
+            - Sudeste
+            - Nordeste
+            - Norte
+            - Centro-Oeste
+        required: false
+      - name: sort
+        in: query
+        schema:
+          type: string
+          enum:
+            - populacao,desc 
+            - area, desc
+    get:
+      summary: Ordena os estados cadastrados
+      responses: 
+        200:
+          description: Sucesso
+          content: 
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Estado"
+        404:            
+          description: Estado não encontrado
+          content:
+            application/json:
+              example: "Not Found"  
 components:
   schemas:
     Estado:
