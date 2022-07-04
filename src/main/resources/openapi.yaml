@@ -7,7 +7,7 @@ info:
     name: Marcele Montalvão Matos
     email: marcele.matos.pb@compasso.com.br
 servers: 
-- url: http://localhost:8080/api/states/
+- url: http://localhost:8080
   description: API de estados
 paths:
   /api/states:
